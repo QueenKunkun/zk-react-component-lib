@@ -74,7 +74,7 @@ export const Example1 = () => {
 
 The output and the effects when clicking on each column:
 
-![Example 1 output](images/example1.gif)
+![Example 1 output](./images/example1.gif)
 
 ## Example 2
 
@@ -119,10 +119,9 @@ export const Example2 = () => {
 }
 ```
 
-
 The output and the effects when clicking on each column:
 
-![Example 2 output](images/example2.gif)
+![Example 2 output](./images/example2.gif)
 
 > NOTE: More advanced usage please consult the source code.
 
@@ -141,12 +140,12 @@ pnpm run dev
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| dataSource | any[] | [] | The data source of the table |
-| columnConfs | HeaderConf[] | [] | The column configurations of the table |
-| rowConfs | HeaderConf[] | [] | The row configurations of the table |
+| dataSource | any[] | undefined | The data source of the table |
+| columnConfs | HeaderConf[] | undefined | The column configurations of the table |
+| rowConfs | HeaderConf[] | undefined | The row configurations of the table |
 | allowSelect | boolean | false | Whether to allow selecting columns |
-| className | string | '' | The class name of the table |
-| classNames | ClassNames | {} | The class names of the table |
+| className | string | undefined | The class name of the table |
+| classNames | ClassNames | undefined | The class names of the table |
 | objectShowInColumn | boolean | false | Whether to show the object in the column |
 | mergeSameValuesInRow | boolean | false | Whether to merge same values in the row |
 | disallowHeadColumn | boolean | false | Whether to disallow head column |
@@ -160,19 +159,19 @@ pnpm run dev
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| header | string | '' | The header of the column |
-| field | string | '' | The field of the column |
-| className | string | '' | The class name of the column |
-| classNames | Object | {} | The class names of headers and selected column |
-| cellRender | (data: T, columnIndex: number, rowIndex: number, defaultRenderer: BaseDefaultRendererType&lt;T&gt;) => JSX.Element | () => {} | The callback function for rendering cells |
+| header | string | undefined | The header of the column |
+| field | string | undefined | The field of the column |
+| className | string | undefined | The class name of the column |
+| classNames | Object | undefined | The class names of headers and selected column |
+| cellRender | (data: T, columnIndex: number, rowIndex: number, defaultRenderer: BaseDefaultRendererType&lt;T&gt;) => JSX.Element | undefined | The callback function for rendering cells |
 
 ## ClassNames
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| headColumn | string | '' | The class name of the head column |
-| headRow | string | '' | The class name of the head row |
-| selected | string | '' | The class name of the selected column |  
+| headColumn | string | undefined | The class name of the head column |
+| headRow | string | undefined | The class name of the head row |
+| selected | string | undefined | The class name of the selected column |  
 
 # License
 
