@@ -74,7 +74,7 @@ export const Example1 = () => {
 
 The output and the effects when clicking on each column:
 
-![Example 1 output](./images/example1.gif)
+![Example 1 output](./images/Example1.gif)
 
 ## Example 2
 
@@ -121,7 +121,7 @@ export const Example2 = () => {
 
 The output and the effects when clicking on each column:
 
-![Example 2 output](./images/example2.gif)
+![Example 2 output](./images/Example2.gif)
 
 > NOTE: More advanced usage please consult the source code.
 
