@@ -1,0 +1,55 @@
+{
+  "name": "zk-react-component-lib",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:browser": "vitest --workspace=vitest.workspace.ts"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.503.0",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.4",
+    "vite-plugin-dts": "^4.5.3",
+    "vitest": "^3.1.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/browser": "^3.1.3",
+    "eslint": "^9.22.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "jsdom": "27.0.0-beta.0",
+    "playwright": "^1.52.0",
+    "tw-animate-css": "^1.2.8",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.26.1",
+    "vite": "^6.3.1",
+    "vitest-browser-react": "^0.1.1"
+  }
+}
