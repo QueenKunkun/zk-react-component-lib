@@ -20,7 +20,6 @@ This is a component library that contains a table component that allows you to s
 
 - ColumnSelectableTable
 
-
 ## Techincal choice
 
 - React
@@ -33,7 +32,7 @@ This is a component library that contains a table component that allows you to s
 # Installation
 
 ```bash
-npm install column-selectable-table
+npm install zk-react-component-lib
 ```
 
 # Usage
