@@ -118,7 +118,7 @@ test('table with no column and row headers', () => {
         dataSource={data}
         allowSelect={true}
         classNames={classNames}
-        className="grid grid-cols-4" />
+        className="" />
     );
     assertResult(container, expectedTable, 4);
 })
@@ -136,7 +136,7 @@ test('table with column headers 1', () => {
         columnConfs={columnConfs}
         allowSelect={true}
         classNames={classNames}
-        className="grid grid-cols-4" />
+        className="" />
     );
     assertResult(container, expectedTable, 4);
 })
@@ -153,7 +153,7 @@ test('table with row headers 1', () => {
         rowConfs={rowConfs}
         allowSelect={true}
         classNames={classNames}
-        className="grid grid-cols-5" />
+        className="" />
     );
     assertResult(container, expectedTable, 5);
 })
@@ -170,7 +170,7 @@ test('table with row headers with span', () => {
         rowConfs={rowConfsWithSpan}
         allowSelect={true}
         classNames={classNames}
-        className="grid grid-cols-5" />
+        className="" />
     );
     assertResult(container, expectedTable, 5);
 })
@@ -192,7 +192,7 @@ test('table with both column and row headers', () => {
         // cellRenderer={cellRenderer(specialId)}
         allowSelect={true}
         classNames={classNames}
-        className="grid grid-cols-5" />);
+        className="" />);
 
     assertResult(container, expectedTable, 5);
 })
@@ -220,7 +220,7 @@ test('table with row and column headers transposed', () => {
         // cellRenderer={cellRenderer(specialId)}
         allowSelect={true}
         classNames={classNames}
-        className="grid grid-cols-4" />);
+        className="" />);
 
     assertResult(container, expectedTable, 4);
 })
@@ -242,7 +242,7 @@ test('table with column headers and row headers with row spans', () => {
         // cellRenderer={cellRenderer(specialId)}
         allowSelect={true}
         classNames={classNames}
-        className="grid grid-cols-5" />);
+        className="" />);
 
     assertResult(container, expectedTable, 5);
 })

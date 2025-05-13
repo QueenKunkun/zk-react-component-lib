@@ -57,7 +57,7 @@ export const TestTable = () => {
           headRow: 'bg-gray-200',
           selected: 'bg-yellow-200',
         }}
-        className="grid grid-cols-5 gap-1" />
+        className="gap-1" />
       <br />
       <hr />
       <br />
@@ -72,7 +72,7 @@ export const TestTable = () => {
           headRow: 'bg-gray-200',
           selected: 'bg-yellow-200',
         }}
-        className="grid grid-cols-5 gap-1" />
+        className="gap-1" />
     </div>
   )
 };

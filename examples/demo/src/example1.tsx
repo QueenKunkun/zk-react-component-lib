@@ -18,7 +18,7 @@ export const Example1 = () => {
                 { header: 'Address', field: 'address', headClassName: 'bg-blue-100' },
             ]}
             allowSelect={true}
-            className="grid grid-cols-3 gap-1"
+            className="gap-1"
             classNames={{
                 headColumn: 'bg-gray-100',
                 headRow: 'bg-gray-200',

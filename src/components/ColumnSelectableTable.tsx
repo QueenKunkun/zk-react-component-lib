@@ -343,6 +343,7 @@ function _ColumnSelectableTable<T extends Object>(props: ColumnSelectableTablePr
             let columnLen = columnConfs1 ? columnConfs1?.length : _data.length;
             if (rowConfs1)
                 columnLen += 1;
+            rootRef.current.style.display = 'grid';
             rootRef.current.style.gridTemplateColumns = getGridTemplateColumns(_data, columnLen);
         }
     }, [_data]);
