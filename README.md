@@ -1,17 +1,3 @@
-- [Introduction](#introduction)
-  - [Components](#components)
-  - [Techincal choice](#techincal-choice)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Example 1](#example-1)
-  - [Example 2](#example-2)
-- [Run example](#run-example)
-- [API](#api)
-  - [Props](#props)
-  - [HeaderConf](#headerconf)
-  - [ClassNames](#classnames)
-- [License](#license)
-
 # Introduction
 
 This is a component library that contains a table component that allows you to select columns from a table.
