@@ -6,7 +6,7 @@ This is a component library that contains a table component that allows you to s
 
 - ColumnSelectableTable
 
-## Techincal choice
+## Techincal Stack
 
 - React
 - Typescript
@@ -133,7 +133,8 @@ pnpm run dev
 | classNames | ClassNames | undefined | The class names of the table |
 | objectShowInColumn | boolean | false | Whether to show the object in the column |
 | mergeSameValuesInRow | boolean | false | Whether to merge same values in the row |
-| disallowHeadColumn | boolean | false | Whether to disallow head column |
+| disallowColumnTitle | boolean | false | `false` to display column title, `true` to hide |
+| disallowRowTitle | boolean | false | `false` to display row title, `true` to hide |
 | beforeRender | (data: T[]) => JSX.Element | undefined | The callback function before rendering the table |
 | cellRender | (data: T, columnIndex: number, rowIndex: number, defaultRenderer: BaseDefaultRendererType&lt;T&gt;) => JSX.Element | undefined | The callback function for rendering cells |
 | columnHeadRenderer | (data: T, columnIndex: number, rowIndex: number, defaultRenderer: BaseDefaultRendererType&lt;T&gt;) => JSX.Element | undefined | The callback function for rendering column headers |

@@ -51,6 +51,7 @@ export const TestTable = () => {
         dataSource={data}
         rowConfs={rowConfs3}
         columnConfs={columnConfs}
+
         allowSelect={true}
         classNames={{
           headColumn: 'bg-gray-100',
@@ -72,6 +73,41 @@ export const TestTable = () => {
           headRow: 'bg-gray-200',
           selected: 'bg-yellow-200',
         }}
+        className="gap-1" />
+      <br />
+      <hr />
+      <br />
+
+      <PeopleSelectableTable
+        objectShowInColumn={true}
+        dataSource={data}
+        rowConfs={columnConfs}
+        columnConfs={rowConfs}
+        allowSelect={true}
+        classNames={{
+          headColumn: 'bg-gray-100',
+          headRow: 'bg-gray-200',
+          selected: 'bg-yellow-200',
+        }}
+        disallowColumnTitle={true}
+        className="gap-1" />
+      <br />
+      <hr />
+      <br />
+
+      <PeopleSelectableTable
+        objectShowInColumn={true}
+        dataSource={data}
+        rowConfs={columnConfs}
+        columnConfs={rowConfs}
+        allowSelect={true}
+        classNames={{
+          headColumn: 'bg-gray-100',
+          headRow: 'bg-gray-200',
+          selected: 'bg-yellow-200',
+        }}
+        disallowColumnTitle={true}
+        disallowRowTitle={true}
         className="gap-1" />
     </div>
   )

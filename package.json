@@ -1,6 +1,6 @@
 {
   "name": "zk-react-component-lib",
-  "version": "0.0.7",
+  "version": "0.1.1",
   "type": "module",
   "repository": {
     "type": "git",
@@ -22,25 +22,23 @@
     "test:browser": "vitest --workspace=vitest.workspace.ts"
   },
   "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "@tailwindcss/vite": "^4.1.4",
-    "class-variance-authority": "^0.7.1",
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.503.0",
-    "tailwind-merge": "^3.2.0",
-    "tailwindcss": "^4.1.4"
+    "tailwind-merge": ">=2.0.0",
+    "tailwindcss": ">=3.0.0"
   },
   "dependencies": {
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.4",
     "vite-plugin-dts": "^4.5.3",
     "vitest": "^3.1.3",
     "@eslint/js": "^9.22.0",
     "@testing-library/react": "^16.3.0",
-    "@types/node": "^22.14.1",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
+    "@types/node": ">=15.0.0",
+    "@types/react": ">=16.0.0",
+    "@types/react-dom": ">=16.0.0",
     "@vitejs/plugin-react": "^4.3.4",
     "@vitest/browser": "^3.1.3",
     "eslint": "^9.22.0",

@@ -125,7 +125,8 @@ export type ColumnSelectableTableProps<T> = Omit<useColumnSelectableTableProps, 
         columnCellHeader?: string,
         selected?: string,
     },
-    disallowHeadColumn?: boolean,
+    disallowColumnTitle?: boolean,
+    disallowRowTitle?: boolean,
     getGridTemplateColumns?: (dataToShow: T[], columnLen: number) => string,
 }
 
@@ -196,7 +197,8 @@ function getStyle(val: any) {
 function _ColumnSelectableTable<T extends Object>(props: ColumnSelectableTableProps<T>) {
 
     let columnConfs = props.columnConfs;
-    let disallowHeadColumn = typeof props.disallowHeadColumn === "boolean" ? props.disallowHeadColumn : !columnConfs;
+    let disallowColumnTitle = typeof props.disallowColumnTitle === "boolean" ? props.disallowColumnTitle : !columnConfs;
+    let disallowRowTitle = typeof props.disallowRowTitle === "boolean" ? props.disallowRowTitle : !props.rowConfs;
     const {
         allowSelect,
         mergeSameValuesInRow,
@@ -214,7 +216,7 @@ function _ColumnSelectableTable<T extends Object>(props: ColumnSelectableTablePr
         rowHeadRenderer,
         onSelectionChange,
         getGridTemplateColumns = (dd: T[], columnLen: number) => {
-            if (rowConfs1 && rowConfs1.length > 0)
+            if (rowConfs1 && rowConfs1.length > 0 && !disallowRowTitle)
                 return `auto repeat(${columnLen - 1},  minmax(1rem, 1fr))`;
             return `repeat(${columnLen},  minmax(1rem, 1fr))`;
         },
@@ -272,10 +274,10 @@ function _ColumnSelectableTable<T extends Object>(props: ColumnSelectableTablePr
         let val;
         // table head
         if (rowIdx == SELECTABLE_HEAD_ROW_INDEX) {
-            // left most column
-            if (rowConfs1 && columnConfs1 && !disallowHeadColumn)
+            // left most column, which is an empty cell
+            if (rowConfs1 && columnConfs1 && !disallowColumnTitle && !disallowRowTitle)
                 yield { val: "", colIdx: SELECTABLE_HEAD_COLUMN_INDEX };
-            if (columnConfs1 && !disallowHeadColumn)
+            if (columnConfs1 && !disallowColumnTitle)
                 for (let colIdx = 0; colIdx < columnConfs1.length; colIdx++) {
                     if (columnConfs1[colIdx].header == null) {
                         // yield null;
@@ -288,7 +290,7 @@ function _ColumnSelectableTable<T extends Object>(props: ColumnSelectableTablePr
             // table content
             if (objectShowInColumn) {
                 // left most column
-                if (rowConfs1 && !disallowHeadColumn) {
+                if (rowConfs1 && !disallowRowTitle) {
                     if (rowConfs1[rowIdx]?.header == null) {
                         // yield null;
                     } else {
@@ -341,7 +343,7 @@ function _ColumnSelectableTable<T extends Object>(props: ColumnSelectableTablePr
         if (!root) return;
         if (getGridTemplateColumns && rootRef && rootRef.current) {
             let columnLen = columnConfs1 ? columnConfs1?.length : _data.length;
-            if (rowConfs1)
+            if (rowConfs1 && !disallowRowTitle)
                 columnLen += 1;
             rootRef.current.style.display = 'grid';
             rootRef.current.style.gridTemplateColumns = getGridTemplateColumns(_data, columnLen);
