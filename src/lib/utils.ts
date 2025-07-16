@@ -9,6 +9,6 @@ export function getValue<T>(obj: T, field: keyof T | undefined, rowIdx: number) 
     return field === undefined ? undefined : obj[field];
 }
 
-export function isLengthGT0<T>(arr?: T[]): arr is T[] {
+export function isNonEmptyArray<T>(arr?: T[]): arr is T[] {
     return isNonNullish(arr) && arr.length > 0;
 }

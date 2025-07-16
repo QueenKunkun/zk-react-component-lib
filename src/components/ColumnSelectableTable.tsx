@@ -2,8 +2,14 @@
 import React, { ReactNode, useEffect, useMemo, useRef } from 'react';
 import clsx from 'clsx';
 import { SELECTABLE_HEAD_COLUMN_INDEX, SELECTABLE_HEAD_ROW_INDEX, useColumnSelectableTable, useColumnSelectableTableProps } from './useColumnSelectableTable';
-import { getValue, isLengthGT0 } from '../lib/utils';
+import { getValue, isNonEmptyArray } from '../lib/utils';
 
+/**
+ * convert text to span element if text have special characters. e.g.
+ * - undercore to 'bold'
+ * @param text 
+ * @returns 
+ */
 export function enhanceSpecialCode(text: string): ReactNode {
     if (typeof text !== "string") return text;
     // find _ and replace with bold text
@@ -65,7 +71,7 @@ export type BaseDefaultRendererType<T> = (o: T, ci: number, ri: number, horizont
 
 export type DefaultRendererType = (o: any, ci: number, ri: number, horizontal?: boolean) => ReactNode;
 
-export type CustomRenderer<T> = (o: T, ci: number, ri: number, r: BaseDefaultRendererType<T>) => ReactNode;
+export type CustomRenderer<T> = (o: T, ci: number, ri: number, defaultRenderer: BaseDefaultRendererType<T>) => ReactNode;
 
 export type CellRender<T> = {
     cellRenderer?: CustomRenderer<T>,
@@ -172,7 +178,7 @@ function updateConfs<T>(confs?: HeaderConf<T>[], classNames?: [{ header: string,
     return cloned;
 }
 
-function renderObject<T>(obj: T, colIdx: number, rowIdx: number, renderer?: (o: T, ci: number, ri: number, defaultRenderer: (o: any, ci: number, ri: number) => ReactNode) => ReactNode) {
+function renderObject<T>(obj: T, colIdx: number, rowIdx: number, renderer?: (o: T, ci: number, ri: number, defaultRenderer: BaseDefaultRendererType<T>) => ReactNode) {
     if (renderer) {
         return renderer(obj, colIdx, rowIdx, HorizontalRenderer);
     }
@@ -224,7 +230,7 @@ function _ColumnSelectableTable<T extends Object>(props: ColumnSelectableTablePr
 
     const objectShowInColumn = rowConfs?.some((c) => c.field !== undefined);
 
-    let mergeSameColumns = isLengthGT0(mergeSameValuesInRow);
+    let mergeSameColumns = isNonEmptyArray(mergeSameValuesInRow);
     if (mergeSameColumns && !objectShowInColumn) {
         throw new Error(`mergeColumnsForRows conflicts with objectLayInColumn`)
     }
